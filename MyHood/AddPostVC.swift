@@ -25,10 +25,14 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.postImageView.layer.cornerRadius = self.postImageView.frame.size.width / 2
-        self.postImageView.clipsToBounds = true
-        self.imagePicker = UIImagePickerController()
-        self.imagePicker.delegate = self
+        postImageView.layer.cornerRadius = self.postImageView.frame.size.width / 2
+        postImageView.clipsToBounds = true
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
     }
     
     // IBActions
